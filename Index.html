@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Oficial de Sensibilidades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #e60000;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .dispositivo {
+      background: #222;
+      margin: 15px auto;
+      padding: 15px;
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #e60000;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background: #e60000;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎯 Sensibilidades Oficiales Todo Rojo 🎯</h1>
+  </header>
+
+  <main>
+    <h2>Selecciona tu dispositivo</h2>
+    <select id="dispositivo">
+      <option value="">-- Elige tu modelo --</option>
+      <option value="infinix">Infinix Hot 30</option>
+      <option value="samsung">Samsung Galaxy</option>
+      <option value="xiaomi">Xiaomi Redmi</option>
+      <option value="iphone">iPhone</option>
+      <option value="otros">Otros</option>
+    </select>
+    <button onclick="mostrarSensibilidad()">Ver Sensibilidad</button>
+
+    <div id="resultado" class="dispositivo"></div>
+  </main>
+
+  <script>
+    function mostrarSensibilidad() {
+      const dispositivo = document.getElementById("dispositivo").value;
+      const resultado = document.getElementById("resultado");
+
+      let texto = "";
+      if (dispositivo === "infinix") {
+        texto = `
+          <h3>Infinix Hot 30</h3>
+          <p>General: 135</p>
+          <p>Punto Rojo: 140</p>
+          <p>Mira 2x: 125</p>
+          <p>Mira 4x: 120</p>
+          <p>Awm: 105</p>
+        `;
+      } else if (dispositivo === "samsung") {
+        texto = `
+          <h3>Samsung Galaxy</h3>
+          <p>General: 130</p>
+          <p>Punto Rojo: 138</p>
+          <p>Mira 2x: 128</p>
+          <p>Mira 4x: 118</p>
+          <p>Awm: 110</p>
+        `;
+      } else if (dispositivo === "xiaomi") {
+        texto = `
+          <h3>Xiaomi Redmi</h3>
+          <p>General: 128</p>
+          <p>Punto Rojo: 135</p>
+          <p>Mira 2x: 120</p>
+          <p>Mira 4x: 115</p>
+          <p>Awm: 108</p>
+        `;
+      } else if (dispositivo === "iphone") {
+        texto = `
+          <h3>iPhone</h3>
+          <p>General: 140</p>
+          <p>Punto Rojo: 145</p>
+          <p>Mira 2x: 130</p>
+          <p>Mira 4x: 125</p>
+          <p>Awm: 115</p>
+        `;
+      } else if (dispositivo === "otros") {
+        texto = `
+          <h3>Otros Dispositivos</h3>
+          <p>General: 125</p>
+          <p>Punto Rojo: 132</p>
+          <p>Mira 2x: 118</p>
+          <p>Mira 4x: 110</p>
+          <p>Awm: 105</p>
+        `;
+      } else {
+        texto = "<p>⚠️ Selecciona un dispositivo válido</p>";
+      }
+
+      resultado.innerHTML = texto;
+    }
+  </script>
+</body>
+</html>
